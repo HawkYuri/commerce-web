@@ -1,0 +1,7 @@
+export default function Cart() {
+  return (
+    <div>
+      <h2>Carrinho</h2>
+    </div>
+  );
+}

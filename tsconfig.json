@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                  // Permite recursos modernos
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",                  // Importante para JSX moderno
+    "strict": true,                      // (Opcional, boa prática)
+    "esModuleInterop": true,            // Resolve erro do 'path'
+    "skipLibCheck": true,               // Evita travar com lib types
+    "resolveJsonModule": true,          // Permite importar .json
+    "isolatedModules": true,            // Compatível com Vite
+    "noEmit": true,                     // Não emite arquivos .js
+    "baseUrl": "./src",                 // Para usar alias @/
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "include": ["src"]
+}
