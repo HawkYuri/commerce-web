@@ -37,7 +37,10 @@ export function Header() {
           <IconButton
             onClick={toggleTheme}
             aria-label="toggle theme"
-            sx={{ color: (theme) => theme.palette.common.white }}
+            sx={{
+              color: (theme) =>
+                theme.palette.getContrastText(theme.palette.primary.main),
+            }}
           >
             {isDarkMode ? <DarkMode /> : <LightMode />}
           </IconButton>
