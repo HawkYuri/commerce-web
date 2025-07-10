@@ -69,7 +69,7 @@ export default function ProductPage() {
         <Card sx={{ flex: 1 }}>
           <CardMedia
             component="img"
-            image="https://via.placeholder.com/600x600.png?text=Produto+3D+Printer"
+            image="/printer.jpg"
             alt="Produto Impressora 3D"
           />
         </Card>
