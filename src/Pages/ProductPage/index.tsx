@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Container,
   Box,
   Card,
   CardMedia,
@@ -14,27 +15,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`tabpanel-${index}`}
-      aria-labelledby={`tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box sx={{ pt: 2 }}>{children}</Box>}
-    </div>
-  );
-}
+import { TabPanel } from "@/Components/TabPanel";
 
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
@@ -55,7 +36,7 @@ export default function ProductPage() {
   };
 
   return (
-    <Box sx={{ p: 3 }}>
+    <Container sx={{ py: 4 }}>
       {/* Container flex para imagem e infos lado a lado */}
       <Box
         sx={{
@@ -98,6 +79,9 @@ export default function ProductPage() {
               onChange={handleVariantChange}
               size="small"
               sx={{ minWidth: 120 }}
+              MenuProps={{
+                disableScrollLock: true,
+              }}
             >
               <MenuItem value="standard">Standard</MenuItem>
               <MenuItem value="pro">Pro</MenuItem>
@@ -149,6 +133,6 @@ export default function ProductPage() {
           <Typography>Perguntas frequentes serão exibidas aqui.</Typography>
         </TabPanel>
       </Box>
-    </Box>
+    </Container>
   );
 }
